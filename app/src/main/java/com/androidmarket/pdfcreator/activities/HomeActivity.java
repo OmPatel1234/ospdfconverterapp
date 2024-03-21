@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import androidmarket.R;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -19,6 +21,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     CardView cardImageToPDF, cardTextToPDF, cardQrToPDF,
             cardExcelToPDF, cardAddWatermark, cardHistory,
             cardViewFiles, cardSettings;
+
+    LottieAnimationView headerAnimationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
 
         setViews();
+        setupAnimations();
     }
 
     private void setViews() {
@@ -48,6 +53,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         cardHistory.setOnClickListener(this);
         cardViewFiles.setOnClickListener(this);
         cardSettings.setOnClickListener(this);
+    }
+
+    private void setupAnimations() {
+        headerAnimationView = findViewById(R.id.headerAnimationView);
+        headerAnimationView.setAnimation(R.raw.homescreen);
+        headerAnimationView.playAnimation();
     }
 
     @Override

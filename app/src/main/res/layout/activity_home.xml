@@ -30,10 +30,13 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="15dp">
 
-                    <ImageView
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/headerAnimationView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/header_image" />
+                        app:lottie_rawRes="@raw/homescreen"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true" />
 
                 </RelativeLayout>
 
@@ -526,7 +529,6 @@
     <!--BackPress Layout-->
 
     <RelativeLayout
-        android:id="@+id/exitLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E6000000"
@@ -561,7 +563,6 @@
                 android:background="#40000000" />
 
             <FrameLayout
-                android:id="@+id/nativeAdFrameLayoutBack"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@id/bottom_view"
@@ -585,7 +586,6 @@
                 android:background="@color/color_image_pdf">
 
                 <TextView
-                    android:id="@+id/txt_exittwo"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_alignParentTop="true"
